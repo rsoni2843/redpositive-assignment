@@ -54,18 +54,18 @@ class UserController {
     }
   };
   // Send user data to email
-  static sendEmail = async(req, res) => {
+  static sendEmail = async (req, res) => {
     const selectedUsers = req.body;
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // generated gmail user
-        pass: process.env.EMAIL_PASS, // generated gmail password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
     const mailOptions = {
       from: "2rsoni2843@gmail.com",
-      to: "rsoni2843@gmail.com",
+      to: "info@redpositive.in",
       subject: "Selected Users Data",
       html: "<p>" + JSON.stringify(selectedUsers) + "</p>",
     };

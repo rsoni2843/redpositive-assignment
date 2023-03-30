@@ -16,7 +16,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
 
-  const api = "https://redpositive-assignment-theta.vercel.app/";
+  const api = "https://backend-deploying-redpositive-rsoni2843.vercel.app/";
 
   useEffect(() => {
     getData();

@@ -19,10 +19,10 @@ const Buttons = (props) => {
   const { data, handleSubmit, handleChange } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
-  const api = "https://redpositive-assignment-theta.vercel.app/";
+  const api = "https://backend-deploying-redpositive-rsoni2843.vercel.app/";
   const handleSendEmail = () => {
     const selectedRows = document.querySelectorAll(
-      'input[type="checkbox"]:checked',
+      'input[type="checkbox"]:checked'
     );
     const selectedData = [];
 
