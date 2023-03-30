@@ -4,10 +4,10 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/users", UserController.getUsers);
 router.post("/users", UserController.postUser);
 router.put("/users/:id", UserController.updateUser);
 router.delete("/users/:id", UserController.deleteUser);
 router.post("/email", UserController.sendEmail);
+router.get("/users", UserController.getUsers);
 
 module.exports = router;

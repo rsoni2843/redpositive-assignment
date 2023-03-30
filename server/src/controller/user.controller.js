@@ -54,7 +54,7 @@ class UserController {
     }
   };
   // Send user data to email
-  static sendEmail = (req, res) => {
+  static sendEmail = async(req, res) => {
     const selectedUsers = req.body;
     const transporter = nodemailer.createTransport({
       service: "gmail",
