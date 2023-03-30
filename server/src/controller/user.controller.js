@@ -16,6 +16,7 @@ class UserController {
   static postUser = async (req, res) => {
     try {
       const user = new UserModel(req.body);
+      console.log(req.body);
       const savedUser = await user.save();
       res.send(savedUser);
     } catch (err) {
