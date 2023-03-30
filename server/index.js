@@ -11,7 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 connectDb(db_url);
-app.use("/", UserRouter);
+
+app.use("/api", UserRouter);
 
 app.listen(PORT, () => {
   console.log("Connected to localhost", PORT);
