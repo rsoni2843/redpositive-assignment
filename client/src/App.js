@@ -16,6 +16,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
 
+  const api = "https://redpositive-assignment-theta.vercel.app/";
+
   useEffect(() => {
     getData();
   }, []);
@@ -23,7 +25,7 @@ function App() {
   const getData = async () => {
     setLoading(true);
     try {
-      let res = await axios.get("http://localhost:8000/users");
+      let res = await axios.get(api + "users");
       setLoading(false);
       setUsers(res.data);
     } catch (err) {
@@ -46,7 +48,7 @@ function App() {
     setLoading(true);
     console.log(data);
     axios
-      .post("http://localhost:8000/users", {
+      .post(api + "users", {
         name: data.name,
         email: data.email,
         phoneNumber: data.phoneNumber,
@@ -68,7 +70,7 @@ function App() {
   const handleDelete = (id) => {
     setLoading(true);
     axios
-      .delete("http://localhost:8000/users/" + id)
+      .delete(api + "users/" + id)
       .then((res) => {
         setLoading(false);
         setUsers(users.filter((user) => user._id !== id));
@@ -90,7 +92,7 @@ function App() {
     if (hobbies) updatedData.hobbies = hobbies;
 
     axios
-      .put("http://localhost:8000/users/" + id, updatedData)
+      .put(api + "users/" + id, updatedData)
       .then((res) => {
         console.log(res);
         setLoading(false);

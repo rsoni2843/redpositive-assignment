@@ -19,6 +19,7 @@ const Buttons = (props) => {
   const { data, handleSubmit, handleChange } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+  const api = "https://redpositive-assignment-theta.vercel.app/";
   const handleSendEmail = () => {
     const selectedRows = document.querySelectorAll(
       'input[type="checkbox"]:checked',
@@ -41,7 +42,7 @@ const Buttons = (props) => {
     });
 
     axios
-      .post("http://localhost:8000/email", { data: selectedData })
+      .post(api + "email", { data: selectedData })
       .then((res) => {
         toast({
           title: "Email Sent Successfully.",
